@@ -27,7 +27,7 @@ colors.setTheme({
 })
 
 const restRouter = require("./routes/rest/index")
-// const webRouter = require("./routes/web")
+const webRouter = require("./routes/web")
 // const adminRouter = require("./routes/admin")
 
 /**
@@ -61,15 +61,15 @@ mongoose.connect(process.env.MONGODB_CONNECTION_STRING, {
 })
 
 // view engine setup
-app.set("views", path.join(__dirname, "views"))
 app.set("view engine", "ejs")
+app.set("views", path.join(__dirname, "views"))
 
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: false })) // To Support Form Data
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, "public")))
 
-// app.use("/", webRouter)
-app.use(`/api/v${process.env.API_VERSION}`, restRouter)
+app.use("/", webRouter)
+app.use(`/v${process.env.API_VERSION}`, restRouter)
 // app.use(`/admin/v${process.env.API_VERSION}`, adminRouter)
 
 // Agenda

@@ -17,9 +17,9 @@ module.exports = {
         redirectUrl: originalUrl
       })
 
-      return res
-        .status(200)
-        .json({ error: false, data: shortId })
+      return res.render("home", {
+        id: shortId
+      })
     } catch (error) {
       return res
         .status(500)
