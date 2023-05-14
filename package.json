@@ -1,0 +1,57 @@
+{
+  "name": "express-skeleton-3",
+  "version": "1.0.0",
+  "description": "A Skeleton Application",
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "start": "npm run serve",
+    "serve": "nodemon ./bin/www",
+    "debug": "nodemon --inspect ./bin/www",
+    "lint": "npm run lint:quiet",
+    "lint:quiet": "eslint --quiet './**/*.js'",
+    "lint:all": "eslint './**/*.js'",
+    "lint:fix": "eslint './**/*.js' --quiet --fix",
+    "test:nocoverage": "ava",
+    "test:withcoverage": "nyc ava",
+    "test": "npm run test:withcoverage",
+    "gendoc": "apidoc -i routes/ -o public/docs"
+  },
+  "dependencies": {
+    "agenda": "^5.0.0",
+    "colors": "^1.4.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-jwt": "^8.4.1",
+    "express-mongo-sanitize": "^2.2.0",
+    "helmet": "^6.1.5",
+    "http-errors": "^2.0.0",
+    "mongoose": "^7.0.3",
+    "nanoid": "^4.0.2",
+    "shortid": "^2.2.16",
+    "xss-clean": "^0.1.1"
+  },
+  "eslintIgnore": [
+    "public/",
+    "bin/"
+  ],
+  "devDependencies": {
+    "apidoc": "^0.54.0",
+    "ava": "^4.1.0",
+    "eslint": "^8.10.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "faker": "^5.5.3",
+    "husky": "^7.0.4",
+    "nodemon": "^2.0.15",
+    "nyc": "^15.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run lint:quiet"
+    }
+  }
+}
