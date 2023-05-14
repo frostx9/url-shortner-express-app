@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 const createError = require("http-errors")
 const express = require("express")
 const mongoose = require("mongoose")
@@ -8,7 +10,6 @@ const cors = require("cors")
 const helmet = require("helmet")
 const xss = require("xss-clean")
 const colors = require("colors")
-require("dotenv").config()
 
 const agenda = require("./agenda")
 require("./agenda/agenda_jobs")(agenda)
