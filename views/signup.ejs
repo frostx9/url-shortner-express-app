@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Sign Up</title>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>Sign Up</h1>
+
+  <form action="/v1/signup/create" method="POST">
+    <label for=""> Enter Your Full Name : </label>
+    <input type="text" required name="name">
+
+    <label for=""> Enter Your Email : </label>
+    <input type="text" required name="email">
+
+    <label for=""> Enter Your Password : </label>
+    <input type="password" required name="password">
+
+    <button type="submit"> Sign Up </button>
+  </form>
+</body>
+
+</html>
